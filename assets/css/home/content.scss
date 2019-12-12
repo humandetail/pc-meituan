@@ -1,0 +1,65 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.section-content {
+  width: 100%;
+  min-height: 200px;
+  padding: 10px;
+  background-color: #fff;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  border-color: $borderColor;
+  box-sizing: border-box;
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .has-style-card {
+      width: 33.33%;
+      padding: 10px;
+      background-color: #fff;
+      border: none;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f4f4f4;
+      }
+
+      .img-box {
+        height: 210px;
+        border-radius: 4px;
+        overflow: hidden;
+
+        .image {
+          width: 100%;
+        }
+      }
+
+      .title {
+        margin: 10px 0;
+        width: 100%;
+        height: 22px;
+        line-height: 22px;
+        font-weight: 700;
+        color: $defaultBlack;
+        @include ellipsis;
+      }
+
+      .price {
+        font-size: 20px;
+        color: $defaultColor;
+
+        .rmb {
+          font-size: 12px;
+        }
+      }
+
+      .address {
+        float: right;
+      }
+    }
+  }
+}

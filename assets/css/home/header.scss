@@ -1,0 +1,60 @@
+.home-header {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+
+  .title {
+    padding: 0 5px;
+    font-size: 18px;
+    margin-left: 13px;
+    margin-right: 10px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: "MFShangHei-Regular" !important;
+  }
+
+  .menus {
+    flex: 1;
+    display: flex;
+
+    .menu-item {
+      position: relative;
+      height: 44px;
+      padding: 0 5px;
+      line-height: 44px;
+      cursor: pointer;
+
+      &.current{
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 37px;
+          width: 2px;
+          height: 0;
+          margin: auto;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-bottom: 7px solid #fff;
+        }
+      }
+    }
+  }
+
+  .all-link {
+    width: 50px;
+    margin-right: 10px;
+    color: #fff;
+
+    span {
+      margin-right: -2px;
+    }
+  }
+}
