@@ -117,12 +117,14 @@ router.get('/products', async (ctx) => {
     ctx.body = {
       product,
       // 这里需要登陆获取
-      more: []
+			more: ctx.isAuthenticated() ? more : [],
+			login: ctx.isAuthenticated()
     }
   } else {
     ctx.body = {
       product: {},
-      more: []
+      more: [],
+			login: ctx.isAuthenticated()
     }
   }
 });

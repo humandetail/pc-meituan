@@ -7,8 +7,36 @@ import cart from './routes/cart';
 import category from './routes/category';
 import geo from './routes/geo';
 import search from './routes/search';
+import users from './routes/users';
+
+import mongoose from 'mongoose';
+import bodyParser from 'koa-bodyparser';
+import session from 'koa-generic-session';
+import Redis from 'koa-redis';
+import json from 'koa-json';
+import dbConfig from './config/config';
+import passport from './utils/passport';
 
 const app = new Koa();
+
+app.keys = ['meituan', 'secert'];
+app.proxy = true;
+app.use(session({
+  key: 'meituan',
+  prefix: 'meituan:uid',
+  store: new Redis()
+}));
+app.use(bodyParser({
+  extendTypes: ['json', 'from', 'text']
+}));
+app.use(json());
+
+mongoose.connect(dbConfig.dbs, {
+  useNewUrlParser: true
+});
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js');
@@ -36,6 +64,7 @@ async function start () {
   app.use(category.routes()).use(category.allowedMethods());
   app.use(geo.routes()).use(geo.allowedMethods());
   app.use(search.routes()).use(search.allowedMethods());
+  app.use(users.routes()).use(search.allowedMethods());
 
   app.use((ctx) => {
     ctx.status = 200;

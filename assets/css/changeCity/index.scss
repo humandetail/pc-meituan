@@ -1,0 +1,113 @@
+@import '../variables.scss';
+
+.page-change-city {
+  width: $defaultWidth;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid $borderColor;
+  border-radius: 5px;
+  box-sizing: border-box;
+
+  .row {
+    padding: 30px 0;
+    border-bottom: 1px solid $borderColor;
+    font-size: 16px;
+
+    &.selector-row {
+      padding-top: 0;
+
+      .label {
+        width: auto;
+        line-height: 40px;
+        margin-left: 40px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+      .selector {
+        width: 120px;
+        margin-left: 20px;
+
+        .search {
+          width: 200px;
+        }
+      }
+    }
+
+    &.hot-city-row {
+      .hot-city-lk {
+        color: $defaultGray;
+        padding: 0 5px;
+        cursor: pointer;
+
+        &:hover {
+          color: $defaultBlack;
+        }
+      }
+    }
+
+    &.alphabet-row {
+      border-bottom: none;
+
+      .label {
+        width: 148px;
+        height: 25px;
+        line-height: 25px;
+      }
+
+      .letter-bar {
+        display: flex;
+        justify-content: space-between;
+        width: 1000px;
+
+        .letter {
+          display: block;
+          width: 25px;
+          height: 25px;
+          line-height: 25px;
+          text-align: center;
+          border-radius: 50%;
+
+          &:hover {
+            background-color: #f8f8f8;
+            color: $defaultBlack;
+          }
+        }
+      }
+    }
+  }
+
+  .alphabet-list {
+    position: relative;
+    padding: 10px 30px 10px 50px;
+
+    .letter {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-size: 18px;
+      color: $defaultBlack;
+      background-color: $defaultYellow;
+      border-radius: 50%;
+    }
+
+    .city {
+      display: inline-block;
+      margin: 10px 20px;
+      font-size: 14px;
+      color: #666;
+      cursor: pointer;
+
+      &:hover {
+        color: $defaultBlack;
+      }
+    }
+  }
+}

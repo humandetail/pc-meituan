@@ -1,0 +1,15 @@
+@import './variables.scss';
+
+.page-cart {
+  width: 980px;
+  margin: 20px auto;
+
+  .money {
+    font-size: 20px;
+    color: #f76120;
+    font-style: normal;
+  }
+  .post {
+    text-align: right;
+  }
+}

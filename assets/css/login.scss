@@ -1,0 +1,89 @@
+@import './variables.scss';
+
+.page-login {
+  width: 980px;
+  margin: 0 auto;
+
+  .header {
+    height: 60px;
+
+    .site-logo {
+      display: block;
+      width: 180px;
+
+      img {
+        display: block;
+        height: 60px;
+      }
+    }
+  }
+
+  .main {
+    padding: 70px 0;
+
+    .login-form {
+      .custom-row {
+        margin-bottom: 5px;
+        .el-form-item__content {
+          height: 24px;
+          line-height: 24px;
+        }
+
+        .forgot {
+          float: right;
+        }
+
+        .lk {
+          color: $defaultColor;
+        }
+      }
+
+      .btn-login {
+        width: 100%;
+        background-color: $defaultYellow;
+        color: $defaultBlack;
+        border-color: $defaultYellow;
+      }
+    }
+  }
+
+  .footer {
+    .site-info-nav {
+      border-width: 1px 0;
+      border-style: solid;
+      border-color: $borderColor;
+
+      .list {
+        height: 40px;
+
+        li {
+          position: relative;
+          float: left;
+          height: 40px;
+          padding: 0 10px;
+          line-height: 40px;
+
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 13px;
+            width: 1px;
+            height: 14px;
+            background-color: $borderColor;
+          }
+
+          &.first {
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .copyright {
+      padding: 10px 0;
+    }
+  }
+}

@@ -15,12 +15,12 @@
       <div class="no-input" v-show="!keyword">
         <h6 class="title">热门搜索</h6>
         <div class="hotwords">
-          <nuxt-link
-            to="#"
+          <a
+            :href="'/products?keyword=' + item.name"
             class="hotword-lk"
             v-for="item of hotPlace"
             :key="item.name"
-          >{{ item.name }}</nuxt-link>
+          >{{ item.name }}</a>
         </div>
       </div>
       <div class="has-input" v-show="keyword">
@@ -30,21 +30,21 @@
             v-for="(item, index) of searchList"
             :key="index"
           >
-            <nuxt-link
-              to="#"
+            <a
+            :href="'/products?keyword=' + item.name"
               class="lk"
-            >{{ item.name }}</nuxt-link>
+            >{{ item.name }}</a>
           </li>
         </ul>
       </div>
     </div>
     <div class="search-hotwords">
-      <nuxt-link
-        to="#"
+      <a
+        :href="'/products?keyword=' + item.name"
         class="search-hotword-lk"
         v-for="item of hotPlace"
         :key="item.name"
-      >{{ item.name }}</nuxt-link>
+      >{{ item.name }}</a>
     </div>
   </div>
 </template>
@@ -72,10 +72,16 @@ export default {
   methods: {
     handleFocus () {
       this.show = true;
+      if (this.timer) {
+        clearTimeout(this.timer);
+        this.timer = null;
+      }
     },
 
     handleBlur () {
-      this.show = false;
+      this.timer = setTimeout(() => {
+        this.show = false;
+      }, 100);
     },
 
     handleInput: utils.debounce(async function () {

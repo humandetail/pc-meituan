@@ -29,7 +29,7 @@ export default {
     },
 
     get pass () {
-      return '';
+      return 'basnfvvmznfobjch';
     },
 
     get code () { // 生成随机验证码，返回一个函数

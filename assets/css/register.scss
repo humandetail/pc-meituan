@@ -1,0 +1,55 @@
+@import './variables.scss';
+
+.page-register {
+
+  .page-content {
+    width: $defaultWidth;
+    margin: 0 auto;
+  }
+
+  .header {
+    height: 40px;
+    padding: 10px 0;
+    border-bottom: 2px solid $defaultYellow;
+
+    .logo {
+      display: block;
+      width: 110px;
+      height: 40px;
+
+      img {
+        display: block;
+        height: 40px;
+      }
+    }
+
+    .has-account {
+      padding: 4px 0;
+      color: $defaultBlack;
+      font-weight: 500;
+
+      .btn-login {
+        background-color: $defaultYellow;
+        color: #fff;
+        border-color: $defaultYellow;
+      }
+    }
+  }
+
+  .main {
+    .page-content {
+      padding: 50px 0;
+
+      .el-input {
+        width: 300px;
+      }
+    }
+  }
+
+  .footer {
+    padding: 20px 0;
+    color: $defaultGray;
+    border-top: 1px solid $defaultGray;
+    background-color: #fff;
+  }
+}
